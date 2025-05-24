@@ -8,12 +8,12 @@ from datetime import datetime, timedelta, timezone
 from pysolar.solar import get_azimuth
 from utils.equations import *
 from zoneinfo import ZoneInfo
-from timezonefinder import TimezoneFinder
+# from timezonefinder import TimezoneFinder
 
-def obtener_zona_horaria_offline(latitud, longitud):
-    tf = TimezoneFinder()
-    zona = tf.timezone_at(lat=latitud, lng=longitud)
-    return zona  # ej: "Europe/Madrid"
+# def obtener_zona_horaria_offline(latitud, longitud):
+#     tf = TimezoneFinder()
+#     zona = tf.timezone_at(lat=latitud, lng=longitud)
+#     return zona  # ej: "Europe/Madrid"
 
 def construir_datetime_utc(dia_del_ano, hora, minutos, tz_local='Europe/Madrid'):
     año_actual = datetime.now().year
