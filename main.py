@@ -22,7 +22,7 @@ with col1:
     minutos = st.slider("Minutos", 0, 59, 0, step=1)
     orientacion_pared = st.slider("Orientación pared (0°=N, 90°=E...)", 0, 359, 45, step=1)
     latitud = st.number_input("Latitud", value=38.27)
-    longitud = st.number_input("Longitud", value=-1.43)
+    longitud = st.number_input("Longitud", value=-3.43)
     dia = st.slider("Día del año", 1, 365, datetime.now().timetuple().tm_yday, step=1)
     # tz_local = obtener_zona_horaria_offline(latitud, longitud)
     fecha_hora_utc = construir_datetime_utc(dia, hora, minutos)
@@ -30,7 +30,7 @@ with col1:
     H = hora_a_angulo_horario(hora, minutos)
     declinacion = declinacion_solar(dia)
     azimut = get_azimuth(latitud, longitud, fecha_hora_utc)
-    print(f"Azimut calculado: {azimut}°")
+    # print(f"Azimut calculado: {azimut}°")
     sombra = hay_sombra(azimut, orientacion_pared)
 
 with col2:
